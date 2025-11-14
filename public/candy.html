@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Candy Glam</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="navbar">
+    <button onclick="menu.hidden^=1">☰</button>
+    <ul id="menu" hidden>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#servicios">Nuestros servicios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><button id="cartBtn" class="cart-btn" aria-label="Ver carrito">Carrito (<span id="cartCount">0</span>)</button></li>
+      <li><button id="loginToggle" class="login-btn" aria-label="Iniciar sesión">Iniciar sesión</button></li>
+    </ul>
+    </div>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-inner">
+        <h1 id="logo" class="logo">Candy Glam</h1>
+      </div>
+    </section>
+
+    <section id="servicios" class="servicios">
+      <div class="section-inner">
+        <h2>Nuestros Servicios</h2>
+        <div class="services-grid">
+          <div class="service-card" data-service="Candy">
+            <h3>Candy</h3>
+            <button class="go-products-btn" data-target="candyProducts">Ir a productos</button>
+          </div>
+
+          <div class="service-card" data-service="Glam">
+            <h3>Glam</h3>
+            <button class="go-products-btn" data-target="glamProducts">Ir a productos</button>
+          </div>
+        </div>
+
+        <div id="candyProducts" class="products-grid">
+          <h3>Productos Candy</h3>
+          <ul>
+            <li data-name="papitas">Papitas <button class="add-btn" data-name="papitas">Agregar</button></li>
+            <li data-name="cacahuates">Cacahuates <button class="add-btn" data-name="cacahuates">Agregar</button></li>
+            <li data-name="paletas">Paletas <button class="add-btn" data-name="paletas">Agregar</button></li>
+            <li data-name="jugos">Jugos <button class="add-btn" data-name="jugos">Agregar</button></li>
+            <li data-name="chechis">Chechis <button class="add-btn" data-name="chechis">Agregar</button></li>
+            <li data-name="coca">Coca <button class="add-btn" data-name="coca">Agregar</button></li>
+            <li data-name="pepsi">Pepsi <button class="add-btn" data-name="pepsi">Agregar</button></li>
+          </ul>
+        </div>
+
+        <div id="glamProducts" class="products-grid">
+          <h3>Productos Glam</h3>
+          <ul>
+            <li data-name="gloss">Gloss <button class="add-btn" data-name="gloss">Agregar</button></li>
+            <li data-name="balsamos">Bálsamos <button class="add-btn" data-name="balsamos">Agregar</button></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contacto" class="contacto">
+      <div class="section-inner">
+        <h2>Contacto</h2>
+        <form id="contactForm" class="contact-form">
+          <input name="name" type="text" placeholder="Tu nombre" required>
+          <input name="email" type="email" placeholder="Tu email" required>
+          <textarea name="message" placeholder="Tu mensaje" rows="5" required></textarea>
+          <button type="submit" class="btn-primary">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="comentarios" class="comentarios">
+      <div class="section-inner">
+        <h2>Comentarios</h2>
+        <div id="commentsContainer">
+          <form id="commentForm" class="comment-form">
+            <textarea id="commentText" name="text" placeholder="Escribe un comentario..." rows="3" required></textarea>
+            <button type="submit" class="btn-primary">Publicar comentario</button>
+          </form>
+          <div id="commentsList" class="comments-list"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Candy Glam.</p>
+  </footer>
+
+  <!-- Modals -->
+  <div id="loginModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" id="closeModal">×</button>
+      <div id="authContainer">
+        <h2 id="loginTitle">Iniciar sesión</h2>
+        <form id="loginForm">
+          <input name="email" type="email" placeholder="Correo electrónico" required>
+          <input name="password" type="password" placeholder="Contraseña" required>
+          <button type="submit" class="btn-primary">Entrar</button>
+        </form>
+        <p class="muted">¿No tienes cuenta? <a href="#" id="toSignup">Regístrate</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="cartModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="close" id="closeCart">×</button>
+      <h2>Carrito</h2>
+      <ul id="cartList"></ul>
+      <div class="cart-actions">
+        <button id="checkoutBtn" class="btn-primary">Pedir (sin pago)</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

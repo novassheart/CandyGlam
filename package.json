@@ -1,0 +1,22 @@
+{
+  "name": "candy-glam",
+  "version": "1.0.0",
+  "description": "Candy Glam - Demo storefront with users and comments",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "netlify dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.0.0",
+    "@netlify/neon": "^0.1.0",
+    "bcrypt": "^5.1.0",
+    "jsonwebtoken": "^9.0.0",
+    "dotenv": "^16.0.0"
+  }
+}
